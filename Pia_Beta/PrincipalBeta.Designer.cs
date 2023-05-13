@@ -36,6 +36,7 @@
             label1 = new Label();
             panel2 = new Panel();
             button5 = new Button();
+            button8 = new Button();
             button4 = new Button();
             button3 = new Button();
             button2 = new Button();
@@ -67,6 +68,7 @@
             panel1.Name = "panel1";
             panel1.Size = new Size(1024, 25);
             panel1.TabIndex = 0;
+            panel1.MouseDown += panel1_MouseDown;
             // 
             // btn_cerrar
             // 
@@ -116,6 +118,7 @@
             // 
             panel2.BackColor = Color.FromArgb(34, 36, 40);
             panel2.Controls.Add(button5);
+            panel2.Controls.Add(button8);
             panel2.Controls.Add(button4);
             panel2.Controls.Add(button3);
             panel2.Controls.Add(button2);
@@ -132,17 +135,34 @@
             // button5
             // 
             button5.FlatAppearance.BorderSize = 0;
-            button5.FlatAppearance.MouseDownBackColor = Color.FromArgb(4, 170, 109);
-            button5.FlatAppearance.MouseOverBackColor = Color.FromArgb(4, 150, 109);
+            button5.FlatAppearance.MouseDownBackColor = Color.Red;
+            button5.FlatAppearance.MouseOverBackColor = Color.FromArgb(192, 0, 0);
             button5.FlatStyle = FlatStyle.Flat;
             button5.Font = new Font("Arial Narrow", 12F, FontStyle.Bold, GraphicsUnit.Point);
             button5.ForeColor = Color.White;
-            button5.Location = new Point(0, 327);
+            button5.Location = new Point(0, 571);
             button5.Name = "button5";
             button5.Size = new Size(178, 42);
-            button5.TabIndex = 12;
-            button5.Text = "Tikets";
+            button5.TabIndex = 14;
+            button5.Text = "Cerrar Sesion";
             button5.UseVisualStyleBackColor = true;
+            button5.Click += button5_Click;
+            // 
+            // button8
+            // 
+            button8.FlatAppearance.BorderSize = 0;
+            button8.FlatAppearance.MouseDownBackColor = Color.FromArgb(4, 170, 109);
+            button8.FlatAppearance.MouseOverBackColor = Color.FromArgb(4, 150, 109);
+            button8.FlatStyle = FlatStyle.Flat;
+            button8.Font = new Font("Arial Narrow", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            button8.ForeColor = Color.White;
+            button8.Location = new Point(0, 274);
+            button8.Name = "button8";
+            button8.Size = new Size(178, 42);
+            button8.TabIndex = 13;
+            button8.Text = "Provedores";
+            button8.UseVisualStyleBackColor = true;
+            button8.Click += button8_Click;
             // 
             // button4
             // 
@@ -152,11 +172,11 @@
             button4.FlatStyle = FlatStyle.Flat;
             button4.Font = new Font("Arial Narrow", 12F, FontStyle.Bold, GraphicsUnit.Point);
             button4.ForeColor = Color.White;
-            button4.Location = new Point(0, 419);
+            button4.Location = new Point(0, 402);
             button4.Name = "button4";
             button4.Size = new Size(178, 42);
             button4.TabIndex = 11;
-            button4.Text = "Control De Usuarios";
+            button4.Text = "Control De Empleados";
             button4.UseVisualStyleBackColor = true;
             // 
             // button3
@@ -183,12 +203,13 @@
             button2.FlatStyle = FlatStyle.Flat;
             button2.Font = new Font("Arial Narrow", 12F, FontStyle.Bold, GraphicsUnit.Point);
             button2.ForeColor = Color.White;
-            button2.Location = new Point(3, 274);
+            button2.Location = new Point(0, 322);
             button2.Name = "button2";
             button2.Size = new Size(178, 42);
             button2.TabIndex = 9;
             button2.Text = "Inventario";
             button2.UseVisualStyleBackColor = true;
+            button2.Click += button2_Click;
             // 
             // button1
             // 
@@ -198,7 +219,7 @@
             button1.FlatStyle = FlatStyle.Flat;
             button1.Font = new Font("Arial Narrow", 12F, FontStyle.Bold, GraphicsUnit.Point);
             button1.ForeColor = Color.White;
-            button1.Location = new Point(3, 226);
+            button1.Location = new Point(0, 226);
             button1.Name = "button1";
             button1.Size = new Size(178, 42);
             button1.TabIndex = 8;
@@ -240,7 +261,7 @@
             button6.FlatStyle = FlatStyle.Flat;
             button6.Font = new Font("Arial Narrow", 12F, FontStyle.Bold, GraphicsUnit.Point);
             button6.ForeColor = Color.White;
-            button6.Location = new Point(0, 548);
+            button6.Location = new Point(-3, 473);
             button6.Name = "button6";
             button6.Size = new Size(178, 42);
             button6.TabIndex = 5;
@@ -316,7 +337,8 @@
         private Button button7;
         private PictureBox Btn_Restaorar;
         private Panel contenedor;
-        private Button button5;
         private Label lb_hr;
+        private Button button8;
+        private Button button5;
     }
 }

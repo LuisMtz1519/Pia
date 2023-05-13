@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Pia_Beta.Clases;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -15,6 +16,11 @@ namespace Pia_Beta
         public ventas()
         {
             InitializeComponent();
+        }
+
+        private void ventas_Load(object sender, EventArgs e)
+        {
+            lbl_usr.Text = sesion_log.nombres + " " + sesion_log.apellidos;
         }
     }
 }

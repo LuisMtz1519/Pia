@@ -54,7 +54,7 @@ namespace Pia_Beta
 
             try
             {
-                usrcontrol ctrl = new usrcontrol();
+                login ctrl = new login();
                 string respuesta = ctrl.controlLog(usuario, contraseña);
                 if (respuesta.Length > 0)
                 {
@@ -63,8 +63,8 @@ namespace Pia_Beta
                 else
                 {
                     PrincipalBeta mainmenu = new PrincipalBeta();
-                    mainmenu.Show();
-                    this.Hide();
+                    mainmenu.Visible = true;
+                    this.Visible = false;
                 }
             }
             catch (Exception ex)

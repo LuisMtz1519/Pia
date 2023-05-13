@@ -9,48 +9,47 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.Xml.Schema;
 
 namespace Pia_Beta
 {
-    public partial class clientes : Form
+    public partial class Inventarios : Form
     {
         string id_sel = "";
         int sel;
-        public clientes()
+        public Inventarios()
         {
             InitializeComponent();
         }
 
-        private void clientes_Load(object sender, EventArgs e)
+        private void Inventarios_Load(object sender, EventArgs e)
         {
             MySqlConnection conexion = bd_conexion.ConectarBD();
             conexion.Open();
 
-            string sql = "(SELECT * FROM Clientes)";
+            string sql = "(SELECT * FROM productos)";
             MySqlCommand comando = new MySqlCommand(sql, conexion);
 
             MySqlDataAdapter adapter = new MySqlDataAdapter();
             adapter.SelectCommand = comando;
             DataTable table = new DataTable();
             adapter.Fill(table);
-            tablaclientes.DataSource = table;
+            tablainv.DataSource = table;
             conexion.Close();
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void btn_Agg_Click(object sender, EventArgs e)
         {
-            NCliente mainmenu = new NCliente();
+            AgProd mainmenu = new AgProd();
             mainmenu.Show();
         }
 
-        private void btn_Eliminar_Click(object sender, EventArgs e)
+        private void btn_Del_Click(object sender, EventArgs e)
         {
-            id_sel = tablaclientes.Rows[sel].Cells[0].Value.ToString();
+            id_sel = tablainv.Rows[sel].Cells[0].Value.ToString();
             MySqlConnection conexion = bd_conexion.ConectarBD();
             conexion.Open();
 
-            string sql = "DELETE FROM Clientes WHERE idClientes='"+id_sel+"';";
+            string sql = "DELETE FROM productos WHERE IdProducto='" + id_sel + "';";
             MySqlCommand comando = new MySqlCommand(sql, conexion);
             comando.CommandTimeout = 60;
             MySqlDataReader reader;
@@ -59,8 +58,8 @@ namespace Pia_Beta
             {
                 reader = comando.ExecuteReader();
                 reader.Close();
-                tablaclientes.Rows.Clear();
-                tablaclientes.Refresh();
+                tablainv.Rows.Clear();
+                tablainv.Refresh();
                 MessageBox.Show("Se Han eliminado correctamente los registros Seleccionados");
             }
             catch (Exception ex)
@@ -69,19 +68,19 @@ namespace Pia_Beta
             }
         }
 
-        private void button3_Click(object sender, EventArgs e)
+        private void button1_Click(object sender, EventArgs e)
         {
             MySqlConnection conexion = bd_conexion.ConectarBD();
             conexion.Open();
 
-            string sql = "(SELECT * FROM Clientes)";
+            string sql = "(SELECT * FROM Productos)";
             MySqlCommand comando = new MySqlCommand(sql, conexion);
 
             MySqlDataAdapter adapter = new MySqlDataAdapter();
             adapter.SelectCommand = comando;
             DataTable table = new DataTable();
             adapter.Fill(table);
-            tablaclientes.DataSource = table;
+            tablainv.DataSource = table;
             conexion.Close();
         }
     }

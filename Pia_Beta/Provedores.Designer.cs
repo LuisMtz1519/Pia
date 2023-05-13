@@ -1,6 +1,6 @@
 ﻿namespace Pia_Beta
 {
-    partial class clientes
+    partial class Provedores
     {
         /// <summary>
         /// Required designer variable.
@@ -28,45 +28,23 @@
         /// </summary>
         private void InitializeComponent()
         {
+            tablaclientes = new DataGridView();
+            button3 = new Button();
             button1 = new Button();
             btn_Eliminar = new Button();
             panel1 = new Panel();
-            button3 = new Button();
-            tablaclientes = new DataGridView();
-            panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)tablaclientes).BeginInit();
+            panel1.SuspendLayout();
             SuspendLayout();
             // 
-            // button1
+            // tablaclientes
             // 
-            button1.Location = new Point(62, 38);
-            button1.Name = "button1";
-            button1.Size = new Size(115, 25);
-            button1.TabIndex = 0;
-            button1.Text = "Nuevo Cliente";
-            button1.UseVisualStyleBackColor = true;
-            button1.Click += button1_Click;
-            // 
-            // btn_Eliminar
-            // 
-            btn_Eliminar.Location = new Point(232, 38);
-            btn_Eliminar.Name = "btn_Eliminar";
-            btn_Eliminar.Size = new Size(114, 25);
-            btn_Eliminar.TabIndex = 1;
-            btn_Eliminar.Text = "Eliminar Cliente";
-            btn_Eliminar.UseVisualStyleBackColor = true;
-            btn_Eliminar.Click += btn_Eliminar_Click;
-            // 
-            // panel1
-            // 
-            panel1.Controls.Add(button3);
-            panel1.Controls.Add(button1);
-            panel1.Controls.Add(btn_Eliminar);
-            panel1.Dock = DockStyle.Top;
-            panel1.Location = new Point(0, 0);
-            panel1.Name = "panel1";
-            panel1.Size = new Size(847, 100);
-            panel1.TabIndex = 4;
+            tablaclientes.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            tablaclientes.Location = new Point(26, 186);
+            tablaclientes.Name = "tablaclientes";
+            tablaclientes.RowTemplate.Height = 25;
+            tablaclientes.Size = new Size(779, 215);
+            tablaclientes.TabIndex = 7;
             // 
             // button3
             // 
@@ -76,40 +54,58 @@
             button3.TabIndex = 2;
             button3.Text = "Actualizar";
             button3.UseVisualStyleBackColor = true;
-            button3.Click += button3_Click;
             // 
-            // tablaclientes
+            // button1
             // 
-            tablaclientes.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            tablaclientes.Location = new Point(30, 137);
-            tablaclientes.Name = "tablaclientes";
-            tablaclientes.RowTemplate.Height = 25;
-            tablaclientes.Size = new Size(779, 215);
-            tablaclientes.TabIndex = 5;
+            button1.Location = new Point(62, 38);
+            button1.Name = "button1";
+            button1.Size = new Size(115, 25);
+            button1.TabIndex = 0;
+            button1.Text = "Nuevo Proveedor";
+            button1.UseVisualStyleBackColor = true;
             // 
-            // clientes
+            // btn_Eliminar
+            // 
+            btn_Eliminar.Location = new Point(219, 38);
+            btn_Eliminar.Name = "btn_Eliminar";
+            btn_Eliminar.Size = new Size(140, 25);
+            btn_Eliminar.TabIndex = 1;
+            btn_Eliminar.Text = "Eliminar Proveedor";
+            btn_Eliminar.UseVisualStyleBackColor = true;
+            // 
+            // panel1
+            // 
+            panel1.Controls.Add(button3);
+            panel1.Controls.Add(button1);
+            panel1.Controls.Add(btn_Eliminar);
+            panel1.Dock = DockStyle.Top;
+            panel1.Location = new Point(0, 0);
+            panel1.Name = "panel1";
+            panel1.Size = new Size(800, 100);
+            panel1.TabIndex = 6;
+            // 
+            // Provedores
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(34, 36, 49);
-            ClientSize = new Size(847, 619);
+            ClientSize = new Size(800, 450);
             Controls.Add(tablaclientes);
             Controls.Add(panel1);
             FormBorderStyle = FormBorderStyle.None;
-            Name = "clientes";
-            Text = "clientes";
-            Load += clientes_Load;
-            panel1.ResumeLayout(false);
+            Name = "Provedores";
+            Text = "Provedores";
             ((System.ComponentModel.ISupportInitialize)tablaclientes).EndInit();
+            panel1.ResumeLayout(false);
             ResumeLayout(false);
         }
 
         #endregion
 
+        private DataGridView tablaclientes;
+        private Button button3;
         private Button button1;
         private Button btn_Eliminar;
         private Panel panel1;
-        private DataGridView tablaclientes;
-        private Button button3;
     }
 }

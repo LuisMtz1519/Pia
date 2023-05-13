@@ -36,13 +36,15 @@
             label6 = new Label();
             label7 = new Label();
             pictureBox1 = new PictureBox();
-            textBox1 = new TextBox();
-            textBox2 = new TextBox();
-            textBox3 = new TextBox();
-            textBox4 = new TextBox();
-            textBox5 = new TextBox();
-            textBox6 = new TextBox();
-            textBox7 = new TextBox();
+            txt_usr = new TextBox();
+            txt_name = new TextBox();
+            txt_ape = new TextBox();
+            txt_dir = new TextBox();
+            txt_city = new TextBox();
+            txt_mail = new TextBox();
+            txt_tel = new TextBox();
+            txt_rol = new TextBox();
+            label8 = new Label();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
@@ -133,54 +135,72 @@
             pictureBox1.TabIndex = 7;
             pictureBox1.TabStop = false;
             // 
-            // textBox1
+            // txt_usr
             // 
-            textBox1.Location = new Point(185, 80);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(165, 23);
-            textBox1.TabIndex = 8;
+            txt_usr.Location = new Point(185, 80);
+            txt_usr.Name = "txt_usr";
+            txt_usr.Size = new Size(165, 23);
+            txt_usr.TabIndex = 8;
             // 
-            // textBox2
+            // txt_name
             // 
-            textBox2.Location = new Point(185, 240);
-            textBox2.Name = "textBox2";
-            textBox2.Size = new Size(165, 23);
-            textBox2.TabIndex = 9;
+            txt_name.Location = new Point(185, 240);
+            txt_name.Name = "txt_name";
+            txt_name.Size = new Size(182, 23);
+            txt_name.TabIndex = 9;
             // 
-            // textBox3
+            // txt_ape
             // 
-            textBox3.Location = new Point(185, 293);
-            textBox3.Name = "textBox3";
-            textBox3.Size = new Size(165, 23);
-            textBox3.TabIndex = 10;
+            txt_ape.Location = new Point(185, 293);
+            txt_ape.Name = "txt_ape";
+            txt_ape.Size = new Size(182, 23);
+            txt_ape.TabIndex = 10;
             // 
-            // textBox4
+            // txt_dir
             // 
-            textBox4.Location = new Point(185, 346);
-            textBox4.Name = "textBox4";
-            textBox4.Size = new Size(165, 23);
-            textBox4.TabIndex = 11;
+            txt_dir.Location = new Point(185, 346);
+            txt_dir.Name = "txt_dir";
+            txt_dir.Size = new Size(182, 23);
+            txt_dir.TabIndex = 11;
             // 
-            // textBox5
+            // txt_city
             // 
-            textBox5.Location = new Point(470, 240);
-            textBox5.Name = "textBox5";
-            textBox5.Size = new Size(165, 23);
-            textBox5.TabIndex = 12;
+            txt_city.Location = new Point(470, 240);
+            txt_city.Name = "txt_city";
+            txt_city.Size = new Size(187, 23);
+            txt_city.TabIndex = 12;
             // 
-            // textBox6
+            // txt_mail
             // 
-            textBox6.Location = new Point(470, 290);
-            textBox6.Name = "textBox6";
-            textBox6.Size = new Size(165, 23);
-            textBox6.TabIndex = 13;
+            txt_mail.Location = new Point(470, 290);
+            txt_mail.Name = "txt_mail";
+            txt_mail.Size = new Size(187, 23);
+            txt_mail.TabIndex = 13;
             // 
-            // textBox7
+            // txt_tel
             // 
-            textBox7.Location = new Point(470, 342);
-            textBox7.Name = "textBox7";
-            textBox7.Size = new Size(165, 23);
-            textBox7.TabIndex = 14;
+            txt_tel.Location = new Point(470, 342);
+            txt_tel.Name = "txt_tel";
+            txt_tel.Size = new Size(187, 23);
+            txt_tel.TabIndex = 14;
+            // 
+            // txt_rol
+            // 
+            txt_rol.Location = new Point(185, 132);
+            txt_rol.Name = "txt_rol";
+            txt_rol.Size = new Size(165, 23);
+            txt_rol.TabIndex = 16;
+            // 
+            // label8
+            // 
+            label8.AutoSize = true;
+            label8.Font = new Font("Arial Narrow", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            label8.ForeColor = Color.White;
+            label8.Location = new Point(109, 132);
+            label8.Name = "label8";
+            label8.Size = new Size(34, 20);
+            label8.TabIndex = 15;
+            label8.Text = "Rol:";
             // 
             // Perfil
             // 
@@ -188,13 +208,15 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(34, 36, 49);
             ClientSize = new Size(727, 437);
-            Controls.Add(textBox7);
-            Controls.Add(textBox6);
-            Controls.Add(textBox5);
-            Controls.Add(textBox4);
-            Controls.Add(textBox3);
-            Controls.Add(textBox2);
-            Controls.Add(textBox1);
+            Controls.Add(txt_rol);
+            Controls.Add(label8);
+            Controls.Add(txt_tel);
+            Controls.Add(txt_mail);
+            Controls.Add(txt_city);
+            Controls.Add(txt_dir);
+            Controls.Add(txt_ape);
+            Controls.Add(txt_name);
+            Controls.Add(txt_usr);
             Controls.Add(pictureBox1);
             Controls.Add(label7);
             Controls.Add(label6);
@@ -203,8 +225,10 @@
             Controls.Add(label3);
             Controls.Add(label2);
             Controls.Add(label1);
+            FormBorderStyle = FormBorderStyle.None;
             Name = "Perfil";
             Text = "Perfil";
+            Load += Perfil_Load;
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);
             PerformLayout();
@@ -220,12 +244,14 @@
         private Label label6;
         private Label label7;
         private PictureBox pictureBox1;
-        private TextBox textBox1;
-        private TextBox textBox2;
-        private TextBox textBox3;
-        private TextBox textBox4;
-        private TextBox textBox5;
-        private TextBox textBox6;
-        private TextBox textBox7;
+        private TextBox txt_usr;
+        private TextBox txt_name;
+        private TextBox txt_ape;
+        private TextBox txt_dir;
+        private TextBox txt_city;
+        private TextBox txt_mail;
+        private TextBox txt_tel;
+        private TextBox txt_rol;
+        private Label label8;
     }
 }

@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace Pia_Beta
 {
-    public partial class Inventarios : Form
+    public partial class Provedores : Form
     {
-        public Inventarios()
+        public Provedores()
         {
             InitializeComponent();
         }

@@ -32,20 +32,20 @@
             textBox1 = new TextBox();
             button1 = new Button();
             panel1 = new Panel();
-            label6 = new Label();
+            lbl_usr = new Label();
             label5 = new Label();
             label4 = new Label();
             label3 = new Label();
             button4 = new Button();
             dataGridView1 = new DataGridView();
-            label2 = new Label();
-            domainUpDown1 = new DomainUpDown();
-            button2 = new Button();
             Codigo = new DataGridViewTextBoxColumn();
             Descripcion = new DataGridViewTextBoxColumn();
             Precio_U = new DataGridViewTextBoxColumn();
             Cantidad = new DataGridViewTextBoxColumn();
             Total = new DataGridViewTextBoxColumn();
+            label2 = new Label();
+            domainUpDown1 = new DomainUpDown();
+            button2 = new Button();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             SuspendLayout();
@@ -82,7 +82,7 @@
             // panel1
             // 
             panel1.BorderStyle = BorderStyle.FixedSingle;
-            panel1.Controls.Add(label6);
+            panel1.Controls.Add(lbl_usr);
             panel1.Controls.Add(label5);
             panel1.Controls.Add(label4);
             panel1.Controls.Add(label3);
@@ -93,16 +93,15 @@
             panel1.Size = new Size(843, 84);
             panel1.TabIndex = 5;
             // 
-            // label6
+            // lbl_usr
             // 
-            label6.AutoSize = true;
-            label6.Font = new Font("Arial Narrow", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            label6.ForeColor = Color.White;
-            label6.Location = new Point(56, 49);
-            label6.Name = "label6";
-            label6.Size = new Size(101, 20);
-            label6.TabIndex = 13;
-            label6.Text = "El Chascarrillo";
+            lbl_usr.AutoSize = true;
+            lbl_usr.Font = new Font("Arial Narrow", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            lbl_usr.ForeColor = Color.White;
+            lbl_usr.Location = new Point(56, 49);
+            lbl_usr.Name = "lbl_usr";
+            lbl_usr.Size = new Size(0, 20);
+            lbl_usr.TabIndex = 13;
             // 
             // label5
             // 
@@ -159,6 +158,32 @@
             dataGridView1.Size = new Size(785, 363);
             dataGridView1.TabIndex = 7;
             // 
+            // Codigo
+            // 
+            Codigo.HeaderText = "Codigo";
+            Codigo.Name = "Codigo";
+            // 
+            // Descripcion
+            // 
+            Descripcion.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            Descripcion.HeaderText = "Articulo";
+            Descripcion.Name = "Descripcion";
+            // 
+            // Precio_U
+            // 
+            Precio_U.HeaderText = "Precio Unitario";
+            Precio_U.Name = "Precio_U";
+            // 
+            // Cantidad
+            // 
+            Cantidad.HeaderText = "Cantidad";
+            Cantidad.Name = "Cantidad";
+            // 
+            // Total
+            // 
+            Total.HeaderText = "Total";
+            Total.Name = "Total";
+            // 
             // label2
             // 
             label2.AutoSize = true;
@@ -189,32 +214,6 @@
             button2.Text = "Eliminar";
             button2.UseVisualStyleBackColor = true;
             // 
-            // Codigo
-            // 
-            Codigo.HeaderText = "Codigo";
-            Codigo.Name = "Codigo";
-            // 
-            // Descripcion
-            // 
-            Descripcion.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-            Descripcion.HeaderText = "Articulo";
-            Descripcion.Name = "Descripcion";
-            // 
-            // Precio_U
-            // 
-            Precio_U.HeaderText = "Precio Unitario";
-            Precio_U.Name = "Precio_U";
-            // 
-            // Cantidad
-            // 
-            Cantidad.HeaderText = "Cantidad";
-            Cantidad.Name = "Cantidad";
-            // 
-            // Total
-            // 
-            Total.HeaderText = "Total";
-            Total.Name = "Total";
-            // 
             // ventas
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -230,10 +229,11 @@
             Controls.Add(textBox1);
             Controls.Add(label1);
             Controls.Add(panel1);
-            FormBorderStyle = FormBorderStyle.Fixed3D;
+            FormBorderStyle = FormBorderStyle.None;
             Location = new Point(181, 25);
             Name = "ventas";
             Text = "ventas";
+            Load += ventas_Load;
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
@@ -254,7 +254,7 @@
         private Label label4;
         private Button button2;
         private Label label3;
-        private Label label6;
+        private Label lbl_usr;
         private Label label5;
         private DataGridViewTextBoxColumn Codigo;
         private DataGridViewTextBoxColumn Descripcion;
