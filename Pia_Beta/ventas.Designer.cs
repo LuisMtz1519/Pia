@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             label1 = new Label();
-            textBox1 = new TextBox();
+            txt_clave = new TextBox();
             button1 = new Button();
             panel1 = new Panel();
             lbl_usr = new Label();
@@ -37,7 +37,7 @@
             label4 = new Label();
             label3 = new Label();
             button4 = new Button();
-            dataGridView1 = new DataGridView();
+            tabla_ventas = new DataGridView();
             Codigo = new DataGridViewTextBoxColumn();
             Descripcion = new DataGridViewTextBoxColumn();
             Precio_U = new DataGridViewTextBoxColumn();
@@ -47,7 +47,7 @@
             domainUpDown1 = new DomainUpDown();
             button2 = new Button();
             panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)tabla_ventas).BeginInit();
             SuspendLayout();
             // 
             // label1
@@ -61,12 +61,12 @@
             label1.TabIndex = 0;
             label1.Text = "Codigo Producto";
             // 
-            // textBox1
+            // txt_clave
             // 
-            textBox1.Location = new Point(153, 38);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(202, 23);
-            textBox1.TabIndex = 1;
+            txt_clave.Location = new Point(153, 38);
+            txt_clave.Name = "txt_clave";
+            txt_clave.Size = new Size(202, 23);
+            txt_clave.TabIndex = 1;
             // 
             // button1
             // 
@@ -78,6 +78,7 @@
             button1.TabIndex = 2;
             button1.Text = "Agregar Producto";
             button1.UseVisualStyleBackColor = true;
+            button1.Click += button1_Click;
             // 
             // panel1
             // 
@@ -145,22 +146,22 @@
             button4.Text = "Cobrar";
             button4.UseVisualStyleBackColor = true;
             // 
-            // dataGridView1
+            // tabla_ventas
             // 
-            dataGridView1.BackgroundColor = Color.White;
-            dataGridView1.BorderStyle = BorderStyle.None;
-            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Columns.AddRange(new DataGridViewColumn[] { Codigo, Descripcion, Precio_U, Cantidad, Total });
-            dataGridView1.GridColor = SystemColors.Control;
-            dataGridView1.Location = new Point(32, 85);
-            dataGridView1.Name = "dataGridView1";
-            dataGridView1.RowTemplate.Height = 25;
-            dataGridView1.Size = new Size(785, 363);
-            dataGridView1.TabIndex = 7;
+            tabla_ventas.BackgroundColor = Color.White;
+            tabla_ventas.BorderStyle = BorderStyle.None;
+            tabla_ventas.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            tabla_ventas.Columns.AddRange(new DataGridViewColumn[] { Codigo, Descripcion, Precio_U, Cantidad, Total });
+            tabla_ventas.GridColor = SystemColors.Control;
+            tabla_ventas.Location = new Point(32, 85);
+            tabla_ventas.Name = "tabla_ventas";
+            tabla_ventas.RowTemplate.Height = 25;
+            tabla_ventas.Size = new Size(785, 363);
+            tabla_ventas.TabIndex = 7;
             // 
             // Codigo
             // 
-            Codigo.HeaderText = "Codigo";
+            Codigo.HeaderText = "Clave Producto";
             Codigo.Name = "Codigo";
             // 
             // Descripcion
@@ -224,9 +225,9 @@
             Controls.Add(domainUpDown1);
             Controls.Add(button2);
             Controls.Add(label2);
-            Controls.Add(dataGridView1);
+            Controls.Add(tabla_ventas);
             Controls.Add(button1);
-            Controls.Add(textBox1);
+            Controls.Add(txt_clave);
             Controls.Add(label1);
             Controls.Add(panel1);
             FormBorderStyle = FormBorderStyle.None;
@@ -236,7 +237,7 @@
             Load += ventas_Load;
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)tabla_ventas).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -244,11 +245,11 @@
         #endregion
 
         private Label label1;
-        private TextBox textBox1;
+        private TextBox txt_clave;
         private Button button1;
         private Panel panel1;
         private Button button4;
-        private DataGridView dataGridView1;
+        private DataGridView tabla_ventas;
         private Label label2;
         private DomainUpDown domainUpDown1;
         private Label label4;

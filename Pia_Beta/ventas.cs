@@ -22,5 +22,12 @@ namespace Pia_Beta
         {
             lbl_usr.Text = sesion_log.nombres + " " + sesion_log.apellidos;
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+           /* string clave = txt_clave.Text;
+            CProductos ctrl = new CProductos();
+            string respuesta = ctrl.cons_prod(clave);*/
+        }
     }
 }

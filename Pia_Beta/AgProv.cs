@@ -9,13 +9,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace Pia_Beta
 {
-    public partial class AgProd : Form
+    public partial class AgProv : Form
     {
-        public AgProd()
+        public AgProv()
         {
             InitializeComponent();
         }
@@ -25,19 +24,18 @@ namespace Pia_Beta
             MySqlConnection conexion = bd_conexion.ConectarBD();
             conexion.Open();
 
-            string sql = "INSERT INTO Productos(clave, Nombre_Producto, Tipo_de_Producto, Existencia, Precio) VALUES('" + txt_Id.Text + "','" + txt_name.Text + "','" + txt_tipo.Text + "','" + txt_exist.Text + "','" + txt_prec.Text + "');";
+            string sql = "INSERT INTO Provedores(nombre, razonsocial, direccion, telefono, correo) VALUES('" + txt_name.Text + "','" + txt_rzn.Text + "','" + txt_dir.Text + "','" + txt_tel.Text + "','" + txt_correo.Text + "');";
             MySqlCommand comando = new MySqlCommand(sql, conexion);
 
             comando.ExecuteNonQuery();
             conexion.Close();
 
             MessageBox.Show("Se han Insertado los datos Correctamente");
-
-            txt_Id.Clear();
             txt_name.Clear();
-            txt_tipo.Clear();
-            txt_exist.Clear();
-            txt_prec.Clear();
+            txt_rzn.Clear();
+            txt_dir.Clear();
+            txt_tel.Clear();
+            txt_correo.Clear();
         }
 
         private void btn_close_Click(object sender, EventArgs e)

@@ -14,8 +14,6 @@ namespace Pia_Beta
 {
     public partial class Inventarios : Form
     {
-        string id_sel = "";
-        int sel;
         public Inventarios()
         {
             InitializeComponent();
@@ -45,11 +43,51 @@ namespace Pia_Beta
 
         private void btn_Del_Click(object sender, EventArgs e)
         {
-            id_sel = tablainv.Rows[sel].Cells[0].Value.ToString();
             MySqlConnection conexion = bd_conexion.ConectarBD();
+            if (tablainv.SelectedRows.Count > 0)
+            {
+                int selectedId = Convert.ToInt32(tablainv.SelectedRows[0].Cells[0].Value);
+
+                // Crear la consulta para eliminar el registro con el ID seleccionado (ajustar el nombre de la tabla y columna según su configuración)
+                string sql = "DELETE FROM Productos WHERE IdProducto='" + selectedId + "';";
+
+                // Abrir la conexión y ejecutar la consulta
+                conexion.Open();
+                MySqlCommand command = new MySqlCommand(sql, conexion);
+                command.ExecuteNonQuery();
+                conexion.Close();
+
+                // Actualizar el DataGridView
+                tablainv.Rows.RemoveAt(tablainv.SelectedRows[0].Index);
+            }
+            else
+            {
+                MessageBox.Show("Seleccione una fila para eliminar.");
+            }
+
+            /*
+            MySqlConnection conexion = bd_conexion.ConectarBD();
+            // Obtener el valor de la columna del ID (ajustar el nombre y índice de la columna según su configuración)
+            int selectedId = Convert.ToInt32(tablainv.SelectedRows[0].Cells[0].Value);
+
+            // Crear la consulta para eliminar el registro con el ID seleccionado (ajustar el nombre de la tabla y columna según su configuración)
+            string sql = "DELETE FROM Productos WHERE IdProducto='" + selectedId + "';";
+
+            // Abrir la conexión y ejecutar la consulta
+            conexion.Open();
+            MySqlCommand command = new MySqlCommand(sql, conexion);
+            command.ExecuteNonQuery();
+            conexion.Close();
+
+            // Actualizar el DataGridView
+            tablainv.Rows.RemoveAt(tablainv.SelectedRows[0].Index);*/
+
+
+
+            /*MySqlConnection conexion = bd_conexion.ConectarBD();
             conexion.Open();
 
-            string sql = "DELETE FROM productos WHERE IdProducto='" + id_sel + "';";
+            string sql = "DELETE FROM productos WHERE IdProducto='" + selectedId + "';";
             MySqlCommand comando = new MySqlCommand(sql, conexion);
             comando.CommandTimeout = 60;
             MySqlDataReader reader;
@@ -65,7 +103,7 @@ namespace Pia_Beta
             catch (Exception ex)
             {
                 Console.WriteLine(ex);
-            }
+            }*/
         }
 
         private void button1_Click(object sender, EventArgs e)

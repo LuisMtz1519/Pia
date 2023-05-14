@@ -15,8 +15,6 @@ namespace Pia_Beta
 {
     public partial class clientes : Form
     {
-        string id_sel = "";
-        int sel;
         public clientes()
         {
             InitializeComponent();
@@ -46,26 +44,26 @@ namespace Pia_Beta
 
         private void btn_Eliminar_Click(object sender, EventArgs e)
         {
-            id_sel = tablaclientes.Rows[sel].Cells[0].Value.ToString();
             MySqlConnection conexion = bd_conexion.ConectarBD();
-            conexion.Open();
-
-            string sql = "DELETE FROM Clientes WHERE idClientes='"+id_sel+"';";
-            MySqlCommand comando = new MySqlCommand(sql, conexion);
-            comando.CommandTimeout = 60;
-            MySqlDataReader reader;
-
-            try
+            if (tablaclientes.SelectedRows.Count > 0)
             {
-                reader = comando.ExecuteReader();
-                reader.Close();
-                tablaclientes.Rows.Clear();
-                tablaclientes.Refresh();
-                MessageBox.Show("Se Han eliminado correctamente los registros Seleccionados");
+                int selectedId = Convert.ToInt32(tablaclientes.SelectedRows[0].Cells[0].Value);
+
+                // Crear la consulta para eliminar el registro con el ID seleccionado (ajustar el nombre de la tabla y columna según su configuración)
+                string sql = "DELETE FROM Productos WHERE IdProducto='" + selectedId + "';";
+
+                // Abrir la conexión y ejecutar la consulta
+                conexion.Open();
+                MySqlCommand command = new MySqlCommand(sql, conexion);
+                command.ExecuteNonQuery();
+                conexion.Close();
+
+                // Actualizar el DataGridView
+                tablaclientes.Rows.RemoveAt(tablaclientes.SelectedRows[0].Index);
             }
-            catch (Exception ex)
+            else
             {
-                Console.WriteLine(ex);
+                MessageBox.Show("Seleccione una fila para eliminar.");
             }
         }
 

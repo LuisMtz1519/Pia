@@ -36,7 +36,6 @@
             label1 = new Label();
             panel2 = new Panel();
             button5 = new Button();
-            button8 = new Button();
             button4 = new Button();
             button3 = new Button();
             button2 = new Button();
@@ -47,6 +46,7 @@
             time_Beta = new System.Windows.Forms.Timer(components);
             contenedor = new Panel();
             lb_hr = new Label();
+            button8 = new Button();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)btn_cerrar).BeginInit();
             ((System.ComponentModel.ISupportInitialize)Btn_Restaorar).BeginInit();
@@ -147,22 +147,6 @@
             button5.Text = "Cerrar Sesion";
             button5.UseVisualStyleBackColor = true;
             button5.Click += button5_Click;
-            // 
-            // button8
-            // 
-            button8.FlatAppearance.BorderSize = 0;
-            button8.FlatAppearance.MouseDownBackColor = Color.FromArgb(4, 170, 109);
-            button8.FlatAppearance.MouseOverBackColor = Color.FromArgb(4, 150, 109);
-            button8.FlatStyle = FlatStyle.Flat;
-            button8.Font = new Font("Arial Narrow", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            button8.ForeColor = Color.White;
-            button8.Location = new Point(0, 274);
-            button8.Name = "button8";
-            button8.Size = new Size(178, 42);
-            button8.TabIndex = 13;
-            button8.Text = "Provedores";
-            button8.UseVisualStyleBackColor = true;
-            button8.Click += button8_Click;
             // 
             // button4
             // 
@@ -292,6 +276,22 @@
             lb_hr.Size = new Size(0, 20);
             lb_hr.TabIndex = 0;
             // 
+            // button8
+            // 
+            button8.FlatAppearance.BorderSize = 0;
+            button8.FlatAppearance.MouseDownBackColor = Color.FromArgb(4, 170, 109);
+            button8.FlatAppearance.MouseOverBackColor = Color.FromArgb(4, 150, 109);
+            button8.FlatStyle = FlatStyle.Flat;
+            button8.Font = new Font("Arial Narrow", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            button8.ForeColor = Color.White;
+            button8.Location = new Point(0, 274);
+            button8.Name = "button8";
+            button8.Size = new Size(178, 42);
+            button8.TabIndex = 13;
+            button8.Text = "Provedores";
+            button8.UseVisualStyleBackColor = true;
+            button8.Click += button8_Click;
+            // 
             // PrincipalBeta
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -338,7 +338,7 @@
         private PictureBox Btn_Restaorar;
         private Panel contenedor;
         private Label lb_hr;
-        private Button button8;
         private Button button5;
+        private Button button8;
     }
 }

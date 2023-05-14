@@ -32,6 +32,10 @@ namespace Pia_Beta
             conexion.Close();
 
             MessageBox.Show("Se han Insertado los datos Correctamente del client@ " + txt_name.Text + " " + txt_apellido.Text);
+            txt_name.Clear();
+            txt_apellido.Clear();
+            txt_dire.Clear();
+            txt_tel.Clear();
         }
 
         private void btn_close_Click(object sender, EventArgs e)
