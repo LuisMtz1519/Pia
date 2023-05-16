@@ -35,8 +35,10 @@
             btn_min = new PictureBox();
             label1 = new Label();
             panel2 = new Panel();
+            ctrl_usr = new Button();
             button5 = new Button();
-            button4 = new Button();
+            button8 = new Button();
+            ctr_empleados = new Button();
             button3 = new Button();
             button2 = new Button();
             button1 = new Button();
@@ -46,7 +48,6 @@
             time_Beta = new System.Windows.Forms.Timer(components);
             contenedor = new Panel();
             lb_hr = new Label();
-            button8 = new Button();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)btn_cerrar).BeginInit();
             ((System.ComponentModel.ISupportInitialize)Btn_Restaorar).BeginInit();
@@ -117,9 +118,10 @@
             // panel2
             // 
             panel2.BackColor = Color.FromArgb(34, 36, 40);
+            panel2.Controls.Add(ctrl_usr);
             panel2.Controls.Add(button5);
             panel2.Controls.Add(button8);
-            panel2.Controls.Add(button4);
+            panel2.Controls.Add(ctr_empleados);
             panel2.Controls.Add(button3);
             panel2.Controls.Add(button2);
             panel2.Controls.Add(button1);
@@ -131,6 +133,22 @@
             panel2.Name = "panel2";
             panel2.Size = new Size(178, 615);
             panel2.TabIndex = 1;
+            // 
+            // ctrl_usr
+            // 
+            ctrl_usr.FlatAppearance.BorderSize = 0;
+            ctrl_usr.FlatAppearance.MouseDownBackColor = Color.FromArgb(4, 170, 109);
+            ctrl_usr.FlatAppearance.MouseOverBackColor = Color.FromArgb(4, 150, 109);
+            ctrl_usr.FlatStyle = FlatStyle.Flat;
+            ctrl_usr.Font = new Font("Arial Narrow", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            ctrl_usr.ForeColor = Color.White;
+            ctrl_usr.Location = new Point(0, 450);
+            ctrl_usr.Name = "ctrl_usr";
+            ctrl_usr.Size = new Size(178, 42);
+            ctrl_usr.TabIndex = 15;
+            ctrl_usr.Text = "Control De Usuarios";
+            ctrl_usr.UseVisualStyleBackColor = true;
+            ctrl_usr.Click += button9_Click;
             // 
             // button5
             // 
@@ -148,20 +166,37 @@
             button5.UseVisualStyleBackColor = true;
             button5.Click += button5_Click;
             // 
-            // button4
+            // button8
             // 
-            button4.FlatAppearance.BorderSize = 0;
-            button4.FlatAppearance.MouseDownBackColor = Color.FromArgb(4, 170, 109);
-            button4.FlatAppearance.MouseOverBackColor = Color.FromArgb(4, 150, 109);
-            button4.FlatStyle = FlatStyle.Flat;
-            button4.Font = new Font("Arial Narrow", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            button4.ForeColor = Color.White;
-            button4.Location = new Point(0, 402);
-            button4.Name = "button4";
-            button4.Size = new Size(178, 42);
-            button4.TabIndex = 11;
-            button4.Text = "Control De Empleados";
-            button4.UseVisualStyleBackColor = true;
+            button8.FlatAppearance.BorderSize = 0;
+            button8.FlatAppearance.MouseDownBackColor = Color.FromArgb(4, 170, 109);
+            button8.FlatAppearance.MouseOverBackColor = Color.FromArgb(4, 150, 109);
+            button8.FlatStyle = FlatStyle.Flat;
+            button8.Font = new Font("Arial Narrow", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            button8.ForeColor = Color.White;
+            button8.Location = new Point(0, 274);
+            button8.Name = "button8";
+            button8.Size = new Size(178, 42);
+            button8.TabIndex = 13;
+            button8.Text = "Provedores";
+            button8.UseVisualStyleBackColor = true;
+            button8.Click += button8_Click;
+            // 
+            // ctr_empleados
+            // 
+            ctr_empleados.FlatAppearance.BorderSize = 0;
+            ctr_empleados.FlatAppearance.MouseDownBackColor = Color.FromArgb(4, 170, 109);
+            ctr_empleados.FlatAppearance.MouseOverBackColor = Color.FromArgb(4, 150, 109);
+            ctr_empleados.FlatStyle = FlatStyle.Flat;
+            ctr_empleados.Font = new Font("Arial Narrow", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            ctr_empleados.ForeColor = Color.White;
+            ctr_empleados.Location = new Point(0, 402);
+            ctr_empleados.Name = "ctr_empleados";
+            ctr_empleados.Size = new Size(178, 42);
+            ctr_empleados.TabIndex = 11;
+            ctr_empleados.Text = "Control De Empleados";
+            ctr_empleados.UseVisualStyleBackColor = true;
+            ctr_empleados.Click += button4_Click;
             // 
             // button3
             // 
@@ -245,7 +280,7 @@
             button6.FlatStyle = FlatStyle.Flat;
             button6.Font = new Font("Arial Narrow", 12F, FontStyle.Bold, GraphicsUnit.Point);
             button6.ForeColor = Color.White;
-            button6.Location = new Point(-3, 473);
+            button6.Location = new Point(-3, 514);
             button6.Name = "button6";
             button6.Size = new Size(178, 42);
             button6.TabIndex = 5;
@@ -265,6 +300,7 @@
             contenedor.Name = "contenedor";
             contenedor.Size = new Size(851, 615);
             contenedor.TabIndex = 9;
+            contenedor.Paint += contenedor_Paint;
             // 
             // lb_hr
             // 
@@ -275,22 +311,6 @@
             lb_hr.Name = "lb_hr";
             lb_hr.Size = new Size(0, 20);
             lb_hr.TabIndex = 0;
-            // 
-            // button8
-            // 
-            button8.FlatAppearance.BorderSize = 0;
-            button8.FlatAppearance.MouseDownBackColor = Color.FromArgb(4, 170, 109);
-            button8.FlatAppearance.MouseOverBackColor = Color.FromArgb(4, 150, 109);
-            button8.FlatStyle = FlatStyle.Flat;
-            button8.Font = new Font("Arial Narrow", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            button8.ForeColor = Color.White;
-            button8.Location = new Point(0, 274);
-            button8.Name = "button8";
-            button8.Size = new Size(178, 42);
-            button8.TabIndex = 13;
-            button8.Text = "Provedores";
-            button8.UseVisualStyleBackColor = true;
-            button8.Click += button8_Click;
             // 
             // PrincipalBeta
             // 
@@ -330,7 +350,7 @@
         private Label label1;
         private PictureBox pictureBox1;
         private System.Windows.Forms.Timer time_Beta;
-        private Button button4;
+        private Button ctr_empleados;
         private Button button3;
         private Button button2;
         private Button button1;
@@ -340,5 +360,6 @@
         private Label lb_hr;
         private Button button5;
         private Button button8;
+        private Button ctrl_usr;
     }
 }

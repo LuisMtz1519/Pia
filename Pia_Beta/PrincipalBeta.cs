@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Pia_Beta.Clases;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -13,9 +14,22 @@ namespace Pia_Beta
 {
     public partial class PrincipalBeta : Form
     {
+        string rolusr = "";
         public PrincipalBeta()
         {
             InitializeComponent();
+            //CARGA DE ROLES
+            rolusr = sesion_log.rol;
+            if (rolusr == "Administrador")
+            {
+                this.ctrl_usr.Visible = true;
+                this.ctr_empleados.Visible = true;
+            }
+            else
+            {
+                this.ctrl_usr.Visible = false;
+                this.ctr_empleados.Visible = false;
+            }
         }
         //Mover_Forma sin barra de titulo
         [DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]
@@ -125,6 +139,21 @@ namespace Pia_Beta
         {
             ReleaseCapture();
             SendMessage(this.Handle, 0x112, 0xf012, 0);
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            abrirFormHija(new Empleados());
+        }
+
+        private void button9_Click(object sender, EventArgs e)
+        {
+            abrirFormHija(new CtrlUsr());
+        }
+
+        private void contenedor_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }
