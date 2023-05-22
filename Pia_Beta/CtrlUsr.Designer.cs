@@ -33,8 +33,10 @@
             btn_Eliminar = new Button();
             tablaempleados = new DataGridView();
             panel1 = new Panel();
+            pictureBox1 = new PictureBox();
             ((System.ComponentModel.ISupportInitialize)tablaempleados).BeginInit();
             panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
             // button3
@@ -53,7 +55,7 @@
             button1.Name = "button1";
             button1.Size = new Size(119, 36);
             button1.TabIndex = 0;
-            button1.Text = "Nuevo Empleado";
+            button1.Text = "Nuevo Usuario";
             button1.UseVisualStyleBackColor = true;
             button1.Click += button1_Click;
             // 
@@ -63,7 +65,7 @@
             btn_Eliminar.Name = "btn_Eliminar";
             btn_Eliminar.Size = new Size(123, 36);
             btn_Eliminar.TabIndex = 1;
-            btn_Eliminar.Text = "Eliminar Empleado";
+            btn_Eliminar.Text = "Eliminar Usuario";
             btn_Eliminar.UseVisualStyleBackColor = true;
             btn_Eliminar.Click += btn_Eliminar_Click;
             // 
@@ -84,15 +86,26 @@
             panel1.Dock = DockStyle.Top;
             panel1.Location = new Point(0, 0);
             panel1.Name = "panel1";
-            panel1.Size = new Size(838, 100);
+            panel1.Size = new Size(892, 100);
             panel1.TabIndex = 8;
+            // 
+            // pictureBox1
+            // 
+            pictureBox1.Image = Properties.Resources.grupo;
+            pictureBox1.Location = new Point(266, 404);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new Size(266, 144);
+            pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBox1.TabIndex = 10;
+            pictureBox1.TabStop = false;
             // 
             // CtrlUsr
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(34, 36, 49);
-            ClientSize = new Size(838, 464);
+            ClientSize = new Size(892, 522);
+            Controls.Add(pictureBox1);
             Controls.Add(tablaempleados);
             Controls.Add(panel1);
             FormBorderStyle = FormBorderStyle.None;
@@ -101,6 +114,7 @@
             Load += CtrlUsr_Load;
             ((System.ComponentModel.ISupportInitialize)tablaempleados).EndInit();
             panel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);
         }
 
@@ -111,5 +125,6 @@
         private Button btn_Eliminar;
         private DataGridView tablaempleados;
         private Panel panel1;
+        private PictureBox pictureBox1;
     }
 }

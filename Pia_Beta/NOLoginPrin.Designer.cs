@@ -28,9 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            linkLabel1 = new LinkLabel();
-            bntCerrar = new PictureBox();
-            btnMinimizar = new PictureBox();
             label2 = new Label();
             label1 = new Label();
             button1 = new Button();
@@ -38,44 +35,9 @@
             usrtxt = new TextBox();
             panel1 = new Panel();
             pictureBox1 = new PictureBox();
-            ((System.ComponentModel.ISupportInitialize)bntCerrar).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)btnMinimizar).BeginInit();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
-            // 
-            // linkLabel1
-            // 
-            linkLabel1.AutoSize = true;
-            linkLabel1.Location = new Point(473, 291);
-            linkLabel1.Name = "linkLabel1";
-            linkLabel1.Size = new Size(139, 15);
-            linkLabel1.TabIndex = 18;
-            linkLabel1.TabStop = true;
-            linkLabel1.Text = "Probar nuevo Login_Beta";
-            linkLabel1.LinkClicked += linkLabel1_LinkClicked_1;
-            // 
-            // bntCerrar
-            // 
-            bntCerrar.Image = Properties.Resources.cerrar;
-            bntCerrar.Location = new Point(769, 12);
-            bntCerrar.Name = "bntCerrar";
-            bntCerrar.Size = new Size(15, 15);
-            bntCerrar.SizeMode = PictureBoxSizeMode.Zoom;
-            bntCerrar.TabIndex = 17;
-            bntCerrar.TabStop = false;
-            bntCerrar.Click += bntCerrar_Click_1;
-            // 
-            // btnMinimizar
-            // 
-            btnMinimizar.Image = Properties.Resources.minimizar;
-            btnMinimizar.Location = new Point(739, 12);
-            btnMinimizar.Name = "btnMinimizar";
-            btnMinimizar.Size = new Size(15, 15);
-            btnMinimizar.SizeMode = PictureBoxSizeMode.Zoom;
-            btnMinimizar.TabIndex = 16;
-            btnMinimizar.TabStop = false;
-            btnMinimizar.Click += btnMinimizar_Click_1;
             // 
             // label2
             // 
@@ -154,9 +116,6 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.Black;
             ClientSize = new Size(791, 342);
-            Controls.Add(linkLabel1);
-            Controls.Add(bntCerrar);
-            Controls.Add(btnMinimizar);
             Controls.Add(label2);
             Controls.Add(label1);
             Controls.Add(button1);
@@ -165,8 +124,6 @@
             Controls.Add(panel1);
             Name = "LoginPrin";
             Text = "LoginPrin";
-            ((System.ComponentModel.ISupportInitialize)bntCerrar).EndInit();
-            ((System.ComponentModel.ISupportInitialize)btnMinimizar).EndInit();
             panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);
@@ -174,9 +131,6 @@
         }
 
         #endregion
-        private LinkLabel linkLabel1;
-        private PictureBox bntCerrar;
-        private PictureBox btnMinimizar;
         private Label label2;
         private Label label1;
         private Button button1;

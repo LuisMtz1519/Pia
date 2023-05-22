@@ -60,6 +60,7 @@ namespace Pia_Beta
         private void btn_Eliminar_Click(object sender, EventArgs e)
         {
             MySqlConnection conexion = bd_conexion.ConectarBD();
+
             if (tablaprov.SelectedRows.Count > 0)
             {
                 int selectedId = Convert.ToInt32(tablaprov.SelectedRows[0].Cells[0].Value);
@@ -74,7 +75,7 @@ namespace Pia_Beta
             }
             else
             {
-                MessageBox.Show("Seleccione una fila para eliminar.");
+                MessageBox.Show("Seleccione una fila para eliminar o la fila seleccionada no tiene registros.");
             }
         }
     }

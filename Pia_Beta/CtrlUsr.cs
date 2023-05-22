@@ -78,7 +78,7 @@ namespace Pia_Beta
             }
             else
             {
-                MessageBox.Show("Seleccione una fila para eliminar.");
+                MessageBox.Show("Seleccione una fila para eliminar o la fila seleccionada no tiene registros");
             }
         }
     }
