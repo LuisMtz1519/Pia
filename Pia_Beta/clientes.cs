@@ -50,7 +50,7 @@ namespace Pia_Beta
                 int selectedId = Convert.ToInt32(tablaclientes.SelectedRows[0].Cells[0].Value);
 
                 // Crear la consulta para eliminar el registro con el ID seleccionado (ajustar el nombre de la tabla y columna según su configuración)
-                string sql = "DELETE FROM Productos WHERE IdProducto='" + selectedId + "';";
+                string sql = "DELETE FROM Clientes WHERE IdClientes='" + selectedId + "';";
 
                 // Abrir la conexión y ejecutar la consulta
                 conexion.Open();

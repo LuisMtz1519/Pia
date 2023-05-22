@@ -80,6 +80,7 @@
             txt_tel.Name = "txt_tel";
             txt_tel.Size = new Size(165, 23);
             txt_tel.TabIndex = 44;
+            txt_tel.KeyPress += txt_tel_KeyPress;
             // 
             // label5
             // 
@@ -105,6 +106,7 @@
             txt_rzn.Name = "txt_rzn";
             txt_rzn.Size = new Size(165, 23);
             txt_rzn.TabIndex = 40;
+            txt_rzn.KeyPress += txt_rzn_KeyPress;
             // 
             // label3
             // 
@@ -123,6 +125,7 @@
             txt_name.Name = "txt_name";
             txt_name.Size = new Size(165, 23);
             txt_name.TabIndex = 38;
+            txt_name.KeyPress += txt_name_KeyPress;
             // 
             // label2
             // 

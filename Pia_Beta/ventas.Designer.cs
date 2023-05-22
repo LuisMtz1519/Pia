@@ -53,10 +53,8 @@
             txt_cant = new TextBox();
             label7 = new Label();
             panel2 = new Panel();
-            lbl_tk4 = new Label();
-            Vista_prev = new RichTextBox();
+            label8 = new Label();
             Btn_imprimir = new Button();
-            btn_prev = new Button();
             btn_cancel = new Button();
             lbl_tk0 = new Label();
             txt_cambio = new TextBox();
@@ -65,7 +63,7 @@
             lbl_tk1 = new Label();
             txt_pagocon = new TextBox();
             lbl_tk2 = new Label();
-            label8 = new Label();
+            printDocument1 = new System.Drawing.Printing.PrintDocument();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)tabla_ventas).BeginInit();
             panel2.SuspendLayout();
@@ -204,6 +202,7 @@
             button2.TabIndex = 10;
             button2.Text = "Eliminar";
             button2.UseVisualStyleBackColor = true;
+            button2.Click += button2_Click;
             // 
             // txt_precio
             // 
@@ -292,6 +291,7 @@
             txt_cant.Name = "txt_cant";
             txt_cant.Size = new Size(31, 23);
             txt_cant.TabIndex = 18;
+            txt_cant.KeyPress += txt_cant_KeyPress;
             // 
             // label7
             // 
@@ -308,10 +308,7 @@
             // 
             panel2.BackColor = Color.FromArgb(34, 36, 40);
             panel2.Controls.Add(label8);
-            panel2.Controls.Add(lbl_tk4);
-            panel2.Controls.Add(Vista_prev);
             panel2.Controls.Add(Btn_imprimir);
-            panel2.Controls.Add(btn_prev);
             panel2.Controls.Add(btn_cancel);
             panel2.Controls.Add(lbl_tk0);
             panel2.Controls.Add(txt_cambio);
@@ -326,44 +323,27 @@
             panel2.Size = new Size(200, 531);
             panel2.TabIndex = 20;
             // 
-            // lbl_tk4
+            // label8
             // 
-            lbl_tk4.AutoSize = true;
-            lbl_tk4.Font = new Font("Arial Narrow", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            lbl_tk4.ForeColor = Color.White;
-            lbl_tk4.Location = new Point(59, 327);
-            lbl_tk4.Name = "lbl_tk4";
-            lbl_tk4.Size = new Size(83, 20);
-            lbl_tk4.TabIndex = 22;
-            lbl_tk4.Text = "Vista Previa";
-            // 
-            // Vista_prev
-            // 
-            Vista_prev.Location = new Point(10, 350);
-            Vista_prev.Name = "Vista_prev";
-            Vista_prev.Size = new Size(181, 120);
-            Vista_prev.TabIndex = 21;
-            Vista_prev.Text = "";
+            label8.AutoSize = true;
+            label8.Font = new Font("Arial Narrow", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            label8.ForeColor = Color.White;
+            label8.Location = new Point(49, 0);
+            label8.Name = "label8";
+            label8.Size = new Size(104, 20);
+            label8.TabIndex = 23;
+            label8.Text = "TICKET VENTA";
             // 
             // Btn_imprimir
             // 
             Btn_imprimir.Font = new Font("Arial Narrow", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            Btn_imprimir.Location = new Point(22, 476);
+            Btn_imprimir.Location = new Point(22, 275);
             Btn_imprimir.Name = "Btn_imprimir";
             Btn_imprimir.Size = new Size(154, 34);
             Btn_imprimir.TabIndex = 20;
             Btn_imprimir.Text = "Cobrar - Imprimir";
             Btn_imprimir.UseVisualStyleBackColor = true;
-            // 
-            // btn_prev
-            // 
-            btn_prev.Font = new Font("Arial Narrow", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            btn_prev.Location = new Point(23, 276);
-            btn_prev.Name = "btn_prev";
-            btn_prev.Size = new Size(154, 34);
-            btn_prev.TabIndex = 19;
-            btn_prev.Text = "Generar Vista Previa";
-            btn_prev.UseVisualStyleBackColor = true;
+            Btn_imprimir.Click += Btn_imprimir_Click;
             // 
             // btn_cancel
             // 
@@ -432,6 +412,7 @@
             txt_pagocon.Name = "txt_pagocon";
             txt_pagocon.Size = new Size(153, 23);
             txt_pagocon.TabIndex = 7;
+            txt_pagocon.TextChanged += txt_pagocon_TextChanged;
             // 
             // lbl_tk2
             // 
@@ -444,16 +425,9 @@
             lbl_tk2.TabIndex = 6;
             lbl_tk2.Text = "Pago Con";
             // 
-            // label8
+            // printDocument1
             // 
-            label8.AutoSize = true;
-            label8.Font = new Font("Arial Narrow", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            label8.ForeColor = Color.White;
-            label8.Location = new Point(49, 0);
-            label8.Name = "label8";
-            label8.Size = new Size(104, 20);
-            label8.TabIndex = 23;
-            label8.Text = "TICKET VENTA";
+            printDocument1.PrintPage += Imprimir;
             // 
             // ventas
             // 
@@ -503,7 +477,6 @@
         private Label lbl_usr;
         private Label label5;
         private TextBox txt_precio;
-        private DataGridView tabla_ventas;
         private TextBox txt_art;
         private Label label4;
         private Label label6;
@@ -524,11 +497,10 @@
         private Label lbl_tk1;
         private TextBox txt_pagocon;
         private Label lbl_tk2;
-        private Label lbl_tk4;
-        private RichTextBox Vista_prev;
         private Button Btn_imprimir;
-        private Button btn_prev;
         private Button btn_cancel;
         private Label label8;
+        private System.Drawing.Printing.PrintDocument printDocument1;
+        public DataGridView tabla_ventas;
     }
 }

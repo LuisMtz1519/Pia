@@ -44,10 +44,14 @@
             label3 = new Label();
             label2 = new Label();
             label1 = new Label();
-            comboBox1 = new ComboBox();
+            cmb_rol = new ComboBox();
             btn_close = new Button();
             btn_reg = new Button();
+            txt_contraseña = new TextBox();
+            label9 = new Label();
+            img_pass = new PictureBox();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)img_pass).BeginInit();
             SuspendLayout();
             // 
             // label8
@@ -55,7 +59,7 @@
             label8.AutoSize = true;
             label8.Font = new Font("Arial Narrow", 12F, FontStyle.Bold, GraphicsUnit.Point);
             label8.ForeColor = Color.White;
-            label8.Location = new Point(127, 152);
+            label8.Location = new Point(127, 169);
             label8.Name = "label8";
             label8.Size = new Size(34, 20);
             label8.TabIndex = 32;
@@ -67,6 +71,7 @@
             txt_tel.Name = "txt_tel";
             txt_tel.Size = new Size(187, 23);
             txt_tel.TabIndex = 31;
+            txt_tel.KeyPress += txt_tel_KeyPress;
             // 
             // txt_mail
             // 
@@ -81,6 +86,7 @@
             txt_city.Name = "txt_city";
             txt_city.Size = new Size(187, 23);
             txt_city.TabIndex = 29;
+            txt_city.KeyPress += txt_city_KeyPress;
             // 
             // txt_dir
             // 
@@ -95,6 +101,7 @@
             txt_ape.Name = "txt_ape";
             txt_ape.Size = new Size(182, 23);
             txt_ape.TabIndex = 27;
+            txt_ape.KeyPress += txt_ape_KeyPress;
             // 
             // txt_name
             // 
@@ -102,13 +109,15 @@
             txt_name.Name = "txt_name";
             txt_name.Size = new Size(182, 23);
             txt_name.TabIndex = 26;
+            txt_name.KeyPress += txt_name_KeyPress;
             // 
             // txt_usr
             // 
-            txt_usr.Location = new Point(203, 100);
+            txt_usr.Location = new Point(203, 83);
             txt_usr.Name = "txt_usr";
             txt_usr.Size = new Size(165, 23);
             txt_usr.TabIndex = 25;
+            txt_usr.KeyPress += txt_usr_KeyPress;
             // 
             // pictureBox1
             // 
@@ -191,20 +200,20 @@
             label1.AutoSize = true;
             label1.Font = new Font("Arial Narrow", 12F, FontStyle.Bold, GraphicsUnit.Point);
             label1.ForeColor = Color.White;
-            label1.Location = new Point(127, 100);
+            label1.Location = new Point(127, 83);
             label1.Name = "label1";
             label1.Size = new Size(61, 20);
             label1.TabIndex = 17;
             label1.Text = "Usuario:";
             // 
-            // comboBox1
+            // cmb_rol
             // 
-            comboBox1.FormattingEnabled = true;
-            comboBox1.Items.AddRange(new object[] { "Adminstrador", "Usuario" });
-            comboBox1.Location = new Point(203, 153);
-            comboBox1.Name = "comboBox1";
-            comboBox1.Size = new Size(165, 23);
-            comboBox1.TabIndex = 33;
+            cmb_rol.FormattingEnabled = true;
+            cmb_rol.Items.AddRange(new object[] { "Administrador", "Usuario" });
+            cmb_rol.Location = new Point(203, 166);
+            cmb_rol.Name = "cmb_rol";
+            cmb_rol.Size = new Size(165, 23);
+            cmb_rol.TabIndex = 33;
             // 
             // btn_close
             // 
@@ -214,6 +223,7 @@
             btn_close.TabIndex = 49;
             btn_close.Text = "Cerrar";
             btn_close.UseVisualStyleBackColor = true;
+            btn_close.Click += btn_close_Click;
             // 
             // btn_reg
             // 
@@ -223,6 +233,37 @@
             btn_reg.TabIndex = 48;
             btn_reg.Text = "Registrar";
             btn_reg.UseVisualStyleBackColor = true;
+            btn_reg.Click += btn_reg_Click;
+            // 
+            // txt_contraseña
+            // 
+            txt_contraseña.Location = new Point(203, 121);
+            txt_contraseña.Name = "txt_contraseña";
+            txt_contraseña.Size = new Size(165, 23);
+            txt_contraseña.TabIndex = 51;
+            txt_contraseña.TextChanged += txt_contraseña_TextChanged;
+            // 
+            // label9
+            // 
+            label9.AutoSize = true;
+            label9.Font = new Font("Arial Narrow", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            label9.ForeColor = Color.White;
+            label9.Location = new Point(109, 120);
+            label9.Name = "label9";
+            label9.Size = new Size(83, 20);
+            label9.TabIndex = 50;
+            label9.Text = "Contraseña:";
+            // 
+            // img_pass
+            // 
+            img_pass.Image = Properties.Resources.show;
+            img_pass.Location = new Point(374, 123);
+            img_pass.Name = "img_pass";
+            img_pass.Size = new Size(27, 21);
+            img_pass.SizeMode = PictureBoxSizeMode.Zoom;
+            img_pass.TabIndex = 52;
+            img_pass.TabStop = false;
+            img_pass.Click += pictureBox2_Click;
             // 
             // AgUsuario
             // 
@@ -230,9 +271,12 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(34, 36, 49);
             ClientSize = new Size(821, 465);
+            Controls.Add(img_pass);
+            Controls.Add(txt_contraseña);
+            Controls.Add(label9);
             Controls.Add(btn_close);
             Controls.Add(btn_reg);
-            Controls.Add(comboBox1);
+            Controls.Add(cmb_rol);
             Controls.Add(label8);
             Controls.Add(txt_tel);
             Controls.Add(txt_mail);
@@ -253,6 +297,7 @@
             Text = "AgUsuario";
             Load += AgUsuario_Load;
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)img_pass).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -274,8 +319,11 @@
         private Label label3;
         private Label label2;
         private Label label1;
-        private ComboBox comboBox1;
+        private ComboBox cmb_rol;
         private Button btn_close;
         private Button btn_reg;
+        private TextBox txt_contraseña;
+        private Label label9;
+        private PictureBox img_pass;
     }
 }

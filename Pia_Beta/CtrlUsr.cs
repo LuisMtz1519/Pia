@@ -56,5 +56,30 @@ namespace Pia_Beta
             AgUsuario mainmenu = new AgUsuario();
             mainmenu.Show();
         }
+
+        private void btn_Eliminar_Click(object sender, EventArgs e)
+        {
+            MySqlConnection conexion = bd_conexion.ConectarBD();
+            if (tablaempleados.SelectedRows.Count > 0)
+            {
+                int selectedId = Convert.ToInt32(tablaempleados.SelectedRows[0].Cells[0].Value);
+
+                // Crear la consulta para eliminar el registro con el ID seleccionado (ajustar el nombre de la tabla y columna según su configuración)
+                string sql = "DELETE FROM Usuarios WHERE Usr_Id='" + selectedId + "';";
+
+                // Abrir la conexión y ejecutar la consulta
+                conexion.Open();
+                MySqlCommand command = new MySqlCommand(sql, conexion);
+                command.ExecuteNonQuery();
+                conexion.Close();
+
+                // Actualizar el DataGridView
+                tablaempleados.Rows.RemoveAt(tablaempleados.SelectedRows[0].Index);
+            }
+            else
+            {
+                MessageBox.Show("Seleccione una fila para eliminar.");
+            }
+        }
     }
 }

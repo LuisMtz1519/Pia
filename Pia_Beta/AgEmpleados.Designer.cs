@@ -52,6 +52,7 @@
             txt_tel.Name = "txt_tel";
             txt_tel.Size = new Size(187, 23);
             txt_tel.TabIndex = 31;
+            txt_tel.KeyPress += txt_tel_KeyPress;
             // 
             // txt_mail
             // 
@@ -59,6 +60,7 @@
             txt_mail.Name = "txt_mail";
             txt_mail.Size = new Size(187, 23);
             txt_mail.TabIndex = 30;
+            txt_mail.KeyPress += txt_mail_KeyPress;
             // 
             // txt_city
             // 
@@ -66,6 +68,7 @@
             txt_city.Name = "txt_city";
             txt_city.Size = new Size(187, 23);
             txt_city.TabIndex = 29;
+            txt_city.KeyPress += txt_city_KeyPress;
             // 
             // txt_dir
             // 
@@ -73,6 +76,7 @@
             txt_dir.Name = "txt_dir";
             txt_dir.Size = new Size(187, 23);
             txt_dir.TabIndex = 28;
+            txt_dir.KeyPress += txt_dir_KeyPress;
             // 
             // txt_ape
             // 
@@ -80,6 +84,7 @@
             txt_ape.Name = "txt_ape";
             txt_ape.Size = new Size(187, 23);
             txt_ape.TabIndex = 27;
+            txt_ape.KeyPress += txt_ape_KeyPress;
             // 
             // txt_name
             // 
@@ -87,6 +92,7 @@
             txt_name.Name = "txt_name";
             txt_name.Size = new Size(187, 23);
             txt_name.TabIndex = 26;
+            txt_name.KeyPress += txt_name_KeyPress;
             // 
             // pictureBox1
             // 

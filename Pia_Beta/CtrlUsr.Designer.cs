@@ -65,6 +65,7 @@
             btn_Eliminar.TabIndex = 1;
             btn_Eliminar.Text = "Eliminar Empleado";
             btn_Eliminar.UseVisualStyleBackColor = true;
+            btn_Eliminar.Click += btn_Eliminar_Click;
             // 
             // tablaempleados
             // 

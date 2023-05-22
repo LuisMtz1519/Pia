@@ -39,13 +39,14 @@
             label1 = new Label();
             btn_cerrar = new PictureBox();
             btn_min = new PictureBox();
-            lbl_lastlogin = new LinkLabel();
             label2 = new Label();
+            pass_img = new PictureBox();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
             ((System.ComponentModel.ISupportInitialize)btn_cerrar).BeginInit();
             ((System.ComponentModel.ISupportInitialize)btn_min).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pass_img).BeginInit();
             SuspendLayout();
             // 
             // pictureBox1
@@ -60,10 +61,10 @@
             // 
             // pictureBox2
             // 
-            pictureBox2.Image = Properties.Resources.usuario;
-            pictureBox2.Location = new Point(38, 174);
+            pictureBox2.Image = Properties.Resources.usuario__2_;
+            pictureBox2.Location = new Point(56, 173);
             pictureBox2.Name = "pictureBox2";
-            pictureBox2.Size = new Size(35, 29);
+            pictureBox2.Size = new Size(32, 26);
             pictureBox2.SizeMode = PictureBoxSizeMode.Zoom;
             pictureBox2.TabIndex = 1;
             pictureBox2.TabStop = false;
@@ -71,7 +72,7 @@
             // pictureBox3
             // 
             pictureBox3.Image = Properties.Resources.Contraseña;
-            pictureBox3.Location = new Point(38, 234);
+            pictureBox3.Location = new Point(55, 234);
             pictureBox3.Name = "pictureBox3";
             pictureBox3.Size = new Size(35, 34);
             pictureBox3.SizeMode = PictureBoxSizeMode.Zoom;
@@ -84,7 +85,7 @@
             lbUsr.BorderStyle = BorderStyle.None;
             lbUsr.Font = new Font("Arial", 11.25F, FontStyle.Bold, GraphicsUnit.Point);
             lbUsr.ForeColor = Color.White;
-            lbUsr.Location = new Point(78, 177);
+            lbUsr.Location = new Point(95, 177);
             lbUsr.Name = "lbUsr";
             lbUsr.Size = new Size(164, 18);
             lbUsr.TabIndex = 3;
@@ -99,7 +100,7 @@
             LbContraseña.BorderStyle = BorderStyle.None;
             LbContraseña.Font = new Font("Arial", 11.25F, FontStyle.Bold, GraphicsUnit.Point);
             LbContraseña.ForeColor = Color.White;
-            LbContraseña.Location = new Point(76, 240);
+            LbContraseña.Location = new Point(93, 240);
             LbContraseña.Name = "LbContraseña";
             LbContraseña.Size = new Size(164, 18);
             LbContraseña.TabIndex = 4;
@@ -111,7 +112,7 @@
             // panel1
             // 
             panel1.BackColor = Color.White;
-            panel1.Location = new Point(76, 197);
+            panel1.Location = new Point(93, 197);
             panel1.Name = "panel1";
             panel1.Size = new Size(144, 1);
             panel1.TabIndex = 5;
@@ -119,7 +120,7 @@
             // panel2
             // 
             panel2.BackColor = Color.White;
-            panel2.Location = new Point(76, 258);
+            panel2.Location = new Point(93, 258);
             panel2.Name = "panel2";
             panel2.Size = new Size(144, 1);
             panel2.TabIndex = 6;
@@ -172,26 +173,25 @@
             btn_min.TabStop = false;
             btn_min.Click += btn_min_Click;
             // 
-            // lbl_lastlogin
-            // 
-            lbl_lastlogin.AutoSize = true;
-            lbl_lastlogin.LinkColor = Color.FromArgb(4, 170, 109);
-            lbl_lastlogin.Location = new Point(124, 373);
-            lbl_lastlogin.Name = "lbl_lastlogin";
-            lbl_lastlogin.Size = new Size(83, 15);
-            lbl_lastlogin.TabIndex = 11;
-            lbl_lastlogin.TabStop = true;
-            lbl_lastlogin.Text = "Login Anterior";
-            lbl_lastlogin.LinkClicked += lbl_lastlogin_LinkClicked;
-            // 
             // label2
             // 
             label2.AutoSize = true;
             label2.Location = new Point(267, 399);
             label2.Name = "label2";
-            label2.Size = new Size(39, 15);
+            label2.Size = new Size(32, 15);
             label2.TabIndex = 12;
-            label2.Text = "V B1.0";
+            label2.Text = "V 1.0";
+            // 
+            // pass_img
+            // 
+            pass_img.Image = Properties.Resources.show;
+            pass_img.Location = new Point(243, 237);
+            pass_img.Name = "pass_img";
+            pass_img.Size = new Size(27, 21);
+            pass_img.SizeMode = PictureBoxSizeMode.Zoom;
+            pass_img.TabIndex = 53;
+            pass_img.TabStop = false;
+            pass_img.Click += pictureBox4_Click;
             // 
             // Login_Beta
             // 
@@ -199,8 +199,8 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(34, 36, 49);
             ClientSize = new Size(331, 428);
+            Controls.Add(pass_img);
             Controls.Add(label2);
-            Controls.Add(lbl_lastlogin);
             Controls.Add(btn_min);
             Controls.Add(btn_cerrar);
             Controls.Add(label1);
@@ -222,6 +222,7 @@
             ((System.ComponentModel.ISupportInitialize)pictureBox3).EndInit();
             ((System.ComponentModel.ISupportInitialize)btn_cerrar).EndInit();
             ((System.ComponentModel.ISupportInitialize)btn_min).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pass_img).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -239,7 +240,7 @@
         private Label label1;
         private PictureBox btn_cerrar;
         private PictureBox btn_min;
-        private LinkLabel lbl_lastlogin;
         private Label label2;
+        private PictureBox pass_img;
     }
 }

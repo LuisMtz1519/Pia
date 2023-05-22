@@ -123,6 +123,16 @@ namespace Pia_Beta.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap esconder {
+            get {
+                object obj = ResourceManager.GetObject("esconder", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap foto21 {
             get {
                 object obj = ResourceManager.GetObject("foto21", resourceCulture);
@@ -193,6 +203,16 @@ namespace Pia_Beta.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap show {
+            get {
+                object obj = ResourceManager.GetObject("show", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap User_icon_2_svg {
             get {
                 object obj = ResourceManager.GetObject("User_icon_2.svg", resourceCulture);
@@ -216,6 +236,16 @@ namespace Pia_Beta.Properties {
         internal static System.Drawing.Bitmap usuario__1_ {
             get {
                 object obj = ResourceManager.GetObject("usuario (1)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap usuario__2_ {
+            get {
+                object obj = ResourceManager.GetObject("usuario (2)", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

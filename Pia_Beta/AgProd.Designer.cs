@@ -80,6 +80,7 @@
             txt_prec.Name = "txt_prec";
             txt_prec.Size = new Size(165, 23);
             txt_prec.TabIndex = 31;
+            txt_prec.KeyPress += txt_prec_KeyPress;
             // 
             // label5
             // 
@@ -98,6 +99,7 @@
             txt_exist.Name = "txt_exist";
             txt_exist.Size = new Size(165, 23);
             txt_exist.TabIndex = 29;
+            txt_exist.KeyPress += txt_exist_KeyPress;
             // 
             // txt_tipo
             // 
@@ -105,6 +107,7 @@
             txt_tipo.Name = "txt_tipo";
             txt_tipo.Size = new Size(165, 23);
             txt_tipo.TabIndex = 27;
+            txt_tipo.KeyPress += txt_tipo_KeyPress;
             // 
             // label3
             // 
@@ -123,6 +126,7 @@
             txt_name.Name = "txt_name";
             txt_name.Size = new Size(165, 23);
             txt_name.TabIndex = 25;
+            txt_name.KeyPress += txt_name_KeyPress;
             // 
             // label2
             // 

@@ -49,9 +49,9 @@
             label1.ForeColor = Color.White;
             label1.Location = new Point(59, 72);
             label1.Name = "label1";
-            label1.Size = new Size(65, 20);
+            label1.Size = new Size(58, 20);
             label1.TabIndex = 9;
-            label1.Text = "Nombres";
+            label1.Text = "Nombre";
             // 
             // txt_name
             // 
@@ -59,6 +59,7 @@
             txt_name.Name = "txt_name";
             txt_name.Size = new Size(165, 23);
             txt_name.TabIndex = 12;
+            txt_name.KeyPress += txt_name_KeyPress;
             // 
             // label2
             // 
@@ -67,9 +68,9 @@
             label2.ForeColor = Color.White;
             label2.Location = new Point(59, 160);
             label2.Name = "label2";
-            label2.Size = new Size(68, 20);
+            label2.Size = new Size(107, 20);
             label2.TabIndex = 11;
-            label2.Text = "Apellidos";
+            label2.Text = "Primer Apellido";
             // 
             // txt_apellido
             // 
@@ -77,6 +78,7 @@
             txt_apellido.Name = "txt_apellido";
             txt_apellido.Size = new Size(165, 23);
             txt_apellido.TabIndex = 14;
+            txt_apellido.KeyPress += txt_apellido_KeyPress;
             // 
             // label3
             // 
@@ -102,6 +104,7 @@
             txt_tel.Name = "txt_tel";
             txt_tel.Size = new Size(165, 23);
             txt_tel.TabIndex = 18;
+            txt_tel.KeyPress += txt_tel_KeyPress;
             // 
             // label5
             // 
