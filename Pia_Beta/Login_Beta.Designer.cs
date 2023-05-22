@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Login_Beta));
             pictureBox1 = new PictureBox();
             pictureBox2 = new PictureBox();
             pictureBox3 = new PictureBox();
@@ -51,10 +52,10 @@
             // 
             // pictureBox1
             // 
-            pictureBox1.Image = Properties.Resources.logo_beta;
-            pictureBox1.Location = new Point(104, 12);
+            pictureBox1.Image = Properties.Resources.Liveoaklogo;
+            pictureBox1.Location = new Point(84, -2);
             pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(116, 73);
+            pictureBox1.Size = new Size(153, 137);
             pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
             pictureBox1.TabIndex = 0;
             pictureBox1.TabStop = false;
@@ -145,7 +146,7 @@
             label1.AutoSize = true;
             label1.Font = new Font("Arial Narrow", 12F, FontStyle.Bold, GraphicsUnit.Point);
             label1.ForeColor = SystemColors.Control;
-            label1.Location = new Point(69, 102);
+            label1.Location = new Point(69, 111);
             label1.Name = "label1";
             label1.Size = new Size(190, 20);
             label1.TabIndex = 0;
@@ -213,6 +214,7 @@
             Controls.Add(pictureBox2);
             Controls.Add(pictureBox1);
             FormBorderStyle = FormBorderStyle.None;
+            Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "Login_Beta";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Login_Beta";

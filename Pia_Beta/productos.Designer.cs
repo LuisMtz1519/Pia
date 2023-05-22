@@ -33,8 +33,12 @@
             panel1 = new Panel();
             button1 = new Button();
             tablainv = new DataGridView();
+            pictureBox1 = new PictureBox();
+            pictureBox2 = new PictureBox();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)tablainv).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             SuspendLayout();
             // 
             // btn_Agg
@@ -87,12 +91,34 @@
             tablainv.Size = new Size(736, 269);
             tablainv.TabIndex = 3;
             // 
+            // pictureBox1
+            // 
+            pictureBox1.Image = Properties.Resources.inventario;
+            pictureBox1.Location = new Point(103, 442);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new Size(194, 165);
+            pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBox1.TabIndex = 4;
+            pictureBox1.TabStop = false;
+            // 
+            // pictureBox2
+            // 
+            pictureBox2.Image = Properties.Resources.la_gestion_del_inventario;
+            pictureBox2.Location = new Point(561, 442);
+            pictureBox2.Name = "pictureBox2";
+            pictureBox2.Size = new Size(194, 165);
+            pictureBox2.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBox2.TabIndex = 5;
+            pictureBox2.TabStop = false;
+            // 
             // Inventarios
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(34, 36, 49);
             ClientSize = new Size(847, 619);
+            Controls.Add(pictureBox2);
+            Controls.Add(pictureBox1);
             Controls.Add(tablainv);
             Controls.Add(panel1);
             FormBorderStyle = FormBorderStyle.None;
@@ -101,6 +127,8 @@
             Load += Inventarios_Load;
             panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)tablainv).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
             ResumeLayout(false);
         }
 
@@ -111,5 +139,7 @@
         private Panel panel1;
         private DataGridView tablainv;
         private Button button1;
+        private PictureBox pictureBox1;
+        private PictureBox pictureBox2;
     }
 }

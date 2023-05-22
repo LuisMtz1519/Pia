@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(PrincipalBeta));
             panel1 = new Panel();
             btn_cerrar = new PictureBox();
             Btn_Restaorar = new PictureBox();
@@ -322,6 +323,7 @@
             Controls.Add(panel2);
             Controls.Add(panel1);
             FormBorderStyle = FormBorderStyle.None;
+            Icon = (Icon)resources.GetObject("$this.Icon");
             MaximumSize = new Size(1366, 768);
             MinimumSize = new Size(960, 540);
             Name = "PrincipalBeta";

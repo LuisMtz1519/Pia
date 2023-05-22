@@ -10,7 +10,7 @@ using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement;
+
 
 namespace Pia_Beta
 {
@@ -20,26 +20,47 @@ namespace Pia_Beta
         {
             InitializeComponent();
         }
-
+        private bool CamposEstanLlenos()
+        {
+            foreach (Control control in Controls)
+            {
+                if (control is TextBox textBox)
+                {
+                    if (string.IsNullOrWhiteSpace(textBox.Text))
+                    {
+                        textBox.Focus();
+                        return false;
+                    }
+                }
+            }
+            return true;
+        }
         private void btn_reg_Click(object sender, EventArgs e)
         {
-            MySqlConnection conexion = bd_conexion.ConectarBD();
-            conexion.Open();
+            if (CamposEstanLlenos())
+            {
+                MySqlConnection conexion = bd_conexion.ConectarBD();
+                conexion.Open();
 
-            string sql = "INSERT INTO Empleados(nombres,apellidos, direccion, ciudad, correo, telefono) VALUES('" + txt_name.Text + "','" + txt_ape.Text + "','" + txt_dir.Text + "','" + txt_city.Text + "','" + txt_mail.Text + "','" + txt_tel.Text + "' );";
-            MySqlCommand comando = new MySqlCommand(sql, conexion);
+                string sql = "INSERT INTO Empleados(nombres,apellidos, direccion, ciudad, correo, telefono) VALUES('" + txt_name.Text + "','" + txt_ape.Text + "','" + txt_dir.Text + "','" + txt_city.Text + "','" + txt_mail.Text + "','" + txt_tel.Text + "' );";
+                MySqlCommand comando = new MySqlCommand(sql, conexion);
 
-            comando.ExecuteNonQuery();
-            conexion.Close();
+                comando.ExecuteNonQuery();
+                conexion.Close();
 
-            MessageBox.Show("Se han Insertado los datos Correctamente de: " + txt_name.Text + " " + txt_ape);
+                MessageBox.Show("Se han Insertado los datos Correctamente de: " + txt_name.Text + " " + txt_ape);
 
-            txt_name.Clear();
-            txt_ape.Clear();
-            txt_dir.Clear();
-            txt_city.Clear();
-            txt_mail.Clear();
-            txt_tel.Clear();
+                txt_name.Clear();
+                txt_ape.Clear();
+                txt_dir.Clear();
+                txt_city.Clear();
+                txt_mail.Clear();
+                txt_tel.Clear();
+            }
+            else
+            {
+                MessageBox.Show("Todos los campos deben de estar llenos", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+            }
 
         }
 

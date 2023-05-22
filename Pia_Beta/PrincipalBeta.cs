@@ -40,7 +40,7 @@ namespace Pia_Beta
 
         private void button6_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Live Oak Version \n Version 2.0 Beta", "Acerca De", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+            MessageBox.Show("Live Oak Version \n Version 1.0 FINAL", "Acerca De", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
         }
         private void abrirFormHija(object formhija)
         {

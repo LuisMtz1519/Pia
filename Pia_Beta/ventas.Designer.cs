@@ -354,6 +354,7 @@
             btn_cancel.TabIndex = 18;
             btn_cancel.Text = "Cancelar";
             btn_cancel.UseVisualStyleBackColor = true;
+            btn_cancel.Click += btn_cancel_Click;
             // 
             // lbl_tk0
             // 
@@ -413,6 +414,7 @@
             txt_pagocon.Size = new Size(153, 23);
             txt_pagocon.TabIndex = 7;
             txt_pagocon.TextChanged += txt_pagocon_TextChanged;
+            txt_pagocon.KeyPress += txt_pagocon_KeyPress;
             // 
             // lbl_tk2
             // 
